@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("favicon-32x32.png");
+    background-repeat: none;
+    background-size: cover;
+    color: hsl(0, 100%, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+body.light {
+    background: hsl(0, 0%, 93%);
+    color: hsl(223, 31%, 20%);
+}
+
+body.darkColor {
+    background: hsl(268, 71%, 12%);
+    color: hsl(52, 100%, 62%);
+}
+
+.container {
+    padding: 100px 500px;
+    height: auto;
+    margin: 0;
+    background: hsl(222, 26%, 31%);
+}
+
+body.light .container {
+    background: hsl(0, 0%, 90%);
+}
+
+body.darkColor .container {
+    background: hsl(268, 75%, 9%);
+}
+
+.calc {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle {
+    margin: 15px 0 15px 0;
+}
+
+.middle input {
+    width: 100%;
+    min-height: 80px;
+    background: hsl(224, 36%, 15%);
+    border: 0 solid hsl(224, 36%, 15%);
+    color: hsl(0, 100%, 100%);
+    font-size: 30px;
+    text-align: end;
+}
+
+body.light .middle input {
+    background: hsl(0, 100%, 100%);
+    color: hsl(222, 26%, 31%);
+}
+
+body.darkColor .middle input {
+    background: hsl(268, 71%, 12%);
+    color: hsl(52, 100%, 62%);
+}
+
+.bottom {
+    display: grid;
+    background: hsl(224, 36%, 15%);
+}
+
+body.light .bottom {
+    background: hsl(0, 5%, 81%);
+}
+
+body.darkColor .bottom {
+    background: hsl(268, 71%, 12%);
+}
+
+.bottom1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 300px;
+    gap: 15px;
+    margin: 15px;
+}
+
+.bottom2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 70px;
+    gap: 15px;
+    margin: 0 15px 15px 15px;
+}
+
+.btns {
+    border: none;
+}
+
+body.light .btns {
+    background: hsl(0, 0%, 90%);
+}
+
+body.darkColor .btns {
+    background: hsl(281, 89%, 26%);
+    color: hsl(52, 100%, 62%);
+}
+
+.btns:hover,
+.btns:focus {
+    filter: brightness(150%);
+    cursor: pointer;
+}
+
+.special {
+    color: hsl(0, 100%, 100%);
+    background: hsl(225, 21%, 49%);
+}
+
+body.light .special {
+    color: hsl(0, 100%, 100%);
+    background: hsl(185, 42%, 37%);
+}
+
+body.darkColor .special {
+    background: hsl(285, 91%, 52%)
+;
+    color: hsl(0, 100%, 100%);
+}
+
+.specialT {
+    background: hsl(6, 63%, 50%);
+}
+
+body.light .specialT {
+    background: hsl(6, 63%, 50%);
+}
+
+body.darkColor .specialT {
+    background: hsl(176, 100%, 44%);
+    color: hsl(198, 20%, 13%);
+}
+
+.toggles {
+    width: 40px;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+    width: 40px;
+    font-size: 14px;
+}
+
+.labels label {
+    cursor: pointer;
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 14px;
+}
+
+.toggle input {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.track {
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+    background: hsl(224, 36%, 15%);
+    cursor: pointer;
+}
+
+body.light .track {
+    background: hsl(0, 5%, 81%);
+}
+
+.knob {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 1px;
+    left: 2px;
+    background: hsl(6, 63%, 50%);
+    border-radius: 50%;
+    transition: transform filter 0.3s;
+    cursor: pointer;
+}
+
+body.darkColor .knob {
+    background: hsl(176, 100%, 44%);
+}
+
+#one {
+    left: 0;
+}
+
+#two {
+    left: 13px;
+}
+
+#three {
+    left: 26px;
+}
+
+#one:checked ~ .track .knob {
+    transform: translateX(0);
+}
+
+#two:checked ~ .track .knob {
+    transform: translateX(12px);
+}
+
+#three:checked ~ .track .knob {
+    transform: translateX(24px);
+}
+
+#one:hover ~ .track .knob,
+#two:hover ~ .track .knob,
+#three:hover ~ .track .knob,
+#one:focus ~ .track .knob,
+#two:focus ~ .track .knob,
+#three:focus ~ .track .knob {
+    filter: brightness(200%);
+}
