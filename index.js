@@ -56,7 +56,7 @@ function chooseOp(oper) {
     }
     previousNum = input.value
     operator = oper
-    input.value = "0"
+    input.value = ""
     currentNum = ""
     recent = false
 }
